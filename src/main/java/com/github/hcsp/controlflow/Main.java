@@ -12,5 +12,20 @@ public class Main {
      *
      * <p>提示：可用除法和求余运算得到一个数字的个、十、百位上的数字。
      */
-    public static void printNarcissisticNumber() {}
+    public static void printNarcissisticNumber() {
+        for (int num = 100; num <= 999; num++) {
+            // 个位
+            int ge = num % 10;
+            // 十位
+            int shi = num / 10 % 10;
+            // 百位
+            int bai = num / 100;
+
+            // 各位立方之和
+            int sum = ge * ge * ge + shi * shi * shi + bai * bai * bai;
+            if (sum == num) {
+                System.out.println(num);
+            }
+        }
+    }
 }
